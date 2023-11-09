@@ -48,7 +48,7 @@ def handle_invalid_input(input_question: str, checklist: list) -> str:
     return choice
 
 
-def get_filters():
+def get_filters() -> tuple:
     """
     Asks user to specify a city, month, and day to analyze.
 
@@ -141,7 +141,7 @@ def load_data(city: str, month: str, day: str) -> pd.DataFrame:
     return df
 
 
-def time_stats(df):
+def time_stats(df: pd.DataFrame) -> None:
     """Displays statistics on the most frequent times of travel."""
 
     print("\nCalculating The Most Frequent Times of Travel...\n")
@@ -164,7 +164,7 @@ def time_stats(df):
     print("-" * 40)
 
 
-def station_stats(df):
+def station_stats(df: pd.DataFrame) -> None:
     """Displays statistics on the most popular stations and trip."""
 
     print("\nCalculating The Most Popular Stations and Trip...\n")
@@ -189,7 +189,7 @@ def station_stats(df):
     print("-" * 40)
 
 
-def trip_duration_stats(df):
+def trip_duration_stats(df: pd.DataFrame) -> None:
     """Displays statistics on the total and average trip duration."""
 
     print("\nCalculating Trip Duration...\n")
@@ -205,7 +205,7 @@ def trip_duration_stats(df):
     print("-" * 40)
 
 
-def user_stats(df):
+def user_stats(df: pd.DataFrame) -> None:
     """Displays statistics on bikeshare users."""
 
     print("\nCalculating User Stats...\n")
@@ -243,7 +243,7 @@ def display_data(df: pd.DataFrame, display_stats: str) -> None:
         )
 
 
-def main():
+def main() -> None:
     while True:
         filtered_data = get_filters()
         if len(filtered_data) == 3:
